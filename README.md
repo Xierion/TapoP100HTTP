@@ -82,7 +82,7 @@ response_template:
     {% set resp = http_request.last_response().json() %}
     {resp["status"]}
 locked_while_printing: True
-off_when_shutdown: False
+off_when_shutdown: False # Set to True to power off on M112 emergency stop
 ```
 
 Optional extras you may want (see Moonraker's power docs):
