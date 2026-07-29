@@ -1,0 +1,19 @@
+[Unit]
+Description=Tapo P100 HTTP bridge for Moonraker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=streamer
+Group=streamer
+WorkingDirectory=/home/streamer/tapo_http_bridge
+ExecStart=/home/streamer/tapo_http_bridge/venv/bin/python3 /home/streamer/tapo_http_bridge/app.py
+Restart=on-failure
+RestartSec=5
+
+# Config file holds your Tapo account password - keep it locked down.
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
