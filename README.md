@@ -35,7 +35,7 @@ chmod 600 config.json # it's plaintext, so lock it down
 ```
 
 `ip` is the plug's local IP (give it a DHCP reservation on your router so
-it doesn't move). `email`/`password` (both case-sensitiver) are your TP-Link/Tapo **account**
+it doesn't move). `email`/`password` (both case-sensitive) are your TP-Link/Tapo **account**
 credentials (the ones you use in the Tapo app), not a device password.
 
 ## 4. Quick manual test (before installing the service)
