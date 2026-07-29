@@ -109,3 +109,4 @@ You should now see a power toggle for `tapo_plug` in Mainsail/Fluidd.
   doesn't handle concurrent sessions well.
 - If `pip install` for `PyP100` fails, make sure `git` is installed
   (`sudo apt install git`) since it's installed directly from GitHub.
+- Use code in printer.cfg to enable idle poweroff
