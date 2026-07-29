@@ -8,7 +8,7 @@ library.
 
 ## 1. Copy the files to the Pi
 
-As user `streamer`:
+As user `pi`:
 
 ```bash
 mkdir -p ~/tapo_http_bridge
