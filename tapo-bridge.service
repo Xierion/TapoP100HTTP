@@ -5,10 +5,10 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-User=pi
-Group=pi
-WorkingDirectory=/home/pi/tapo_http_bridge
-ExecStart=/home/pi/tapo_http_bridge/venv/bin/python3 /home/pi/tapo_http_bridge/app.py
+User=pi # Update for user
+Group=pi # Update for user
+WorkingDirectory=/home/pi/tapo_http_bridge # Update for user
+ExecStart=/home/pi/tapo_http_bridge/venv/bin/python3 /home/pi/tapo_http_bridge/app.py # Update for user
 Restart=on-failure
 RestartSec=5
 
