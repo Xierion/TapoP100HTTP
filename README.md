@@ -6,7 +6,14 @@ small Flask server that translates those requests into calls against the
 [almottier/TapoP100](https://github.com/almottier/TapoP100) (`PyP100`)
 library.
 
-## 1. Copy the files to the Pi
+## 1: Update System and Install Dependencies
+```bash
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y git
+```
+
+## 2. Copy the files to the Pi
 
 As user `pi`:
 
@@ -17,7 +24,12 @@ mkdir -p ~/tapo_http_bridge
 cd ~/tapo_http_bridge
 ```
 
-## 2. Create a venv and install deps
+Clone Tapo P100 HTTP bridge
+```bash
+cd ~
+git clone https://github.com/xierion/TapoP100HTTP.git
+```
+## 3. Create a venv and install deps
 
 ```bash
 python3 -m venv venv
@@ -26,7 +38,7 @@ pip install -r requirements.txt
 deactivate
 ```
 
-## 3. Configure your plug + Tapo account
+## 4. Configure your plug + Tapo account
 
 ```bash
 cp config.example.json config.json
@@ -38,7 +50,7 @@ chmod 600 config.json # it's plaintext, so lock it down
 it doesn't move). `email`/`password` are your TP-Link/Tapo **account**
 credentials (the ones you use in the Tapo app, both case-sensitive), not a device password.
 
-## 4. Quick manual test (before installing the service)
+## 5. Quick manual test (before installing the service)
 
 ```bash
 source venv/bin/activate
@@ -56,7 +68,7 @@ curl http://127.0.0.1:5111/off
 You should get back `{"status": "on"}` / `{"status": "off"}`. Ctrl-C the
 server once this works.
 
-## 5. Install as a systemd service
+## 6. Install as a systemd service
 
 ```bash
 sudo cp tapo-bridge.service /etc/systemd/system/
@@ -67,7 +79,7 @@ sudo systemctl status tapo-bridge.service
 
 Logs: `journalctl -u tapo-bridge.service -f`
 
-## 6. Add it to moonraker.conf
+## 7. Add it to moonraker.conf
 
 Append to `~/printer_data/config/moonraker.conf` (adjust the section name
 `[power tapo_plug]` to whatever you want it called in Mainsail/Fluidd):
@@ -83,13 +95,6 @@ response_template:
     {resp["status"]}
 locked_while_printing: True
 off_when_shutdown: False # Set to True to power off on M112 emergency stop
-```
-
-Optional extras you may want (see Moonraker's power docs):
-
-```ini
-restart_klipper_when_powered: True
-on_when_job_queued: True
 ```
 
 Then restart Moonraker:
