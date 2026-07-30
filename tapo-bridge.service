@@ -7,8 +7,8 @@ Wants=network-online.target
 Type=simple
 User=pi
 Group=pi
-WorkingDirectory=/home/streamer/tapo_http_bridge
-ExecStart=/home/streamer/tapo_http_bridge/venv/bin/python3 /home/streamer/tapo_http_bridge/app.py
+WorkingDirectory=/home/pi/tapo_http_bridge
+ExecStart=/home/pi/tapo_http_bridge/venv/bin/python3 /home/pi/tapo_http_bridge/app.py
 Restart=on-failure
 RestartSec=5
 
