@@ -13,7 +13,7 @@ sudo apt upgrade -y
 sudo apt install -y git
 ```
 
-## 2. Copy the files to the Pi
+## 2. Clone the repository
 
 Clone Tapo P100 HTTP bridge
 ```bash
