@@ -15,15 +15,6 @@ sudo apt install -y git
 
 ## 2. Copy the files to the Pi
 
-As user `pi`:
-
-```bash
-mkdir -p ~/tapo_http_bridge
-# copy app.py, config.example.json, requirements.txt, tapo-bridge.service
-# into ~/tapo_http_bridge
-cd ~/tapo_http_bridge
-```
-
 Clone Tapo P100 HTTP bridge
 ```bash
 cd ~
