@@ -27,7 +27,7 @@ cd ~/tapo_http_bridge
 Clone Tapo P100 HTTP bridge
 ```bash
 cd ~
-git clone https://github.com/xierion/TapoP100HTTP.git
+git clone https://github.com/Xierion/tapo_http_bridge.git
 ```
 ## 3. Create a venv and install deps
 
